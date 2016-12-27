@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				height: 250px;
+			}
+			img{
+				width:400px;
+				position:absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				<img src="../img/pic1.jpg" alt="" />
+				<img src="../img/pic2.jpg" alt="" />
+				<img src="../img/pic3.jpg" alt="" />
+				<img src="../img/pic4.jpg" alt="" />
+			</div>
+	
+		<button>点击我切换图片</button>
+		<script>
+		var btn=document.getElementsByTagName("button")[0];
+		var pic=document.getElementsByTagName("img");
+			var index=3;
+			btn.onclick=function(){
+				if(index<0){
+					index=2;
+				}
+				if(index-1<0){
+				//添加最后一张
+				}else{
+					//添加下一张
+				}
+				fadeout(pic[index]);
+				index--;
+				
+			}
+		
+			//兼容透明度的方法ie
+			function setopacity(elem,level){
+				if(elem.filters){
+					elem.style.filter="alpha(opacity="+level+")";
+					elem.style.zoom=1;
+				}else{
+					elem.style.opacity=level/100;
+				}
+			}
+			//淡出效果
+			function fadeout(elem){//从有到无
+				for(var i=0;i<=100;i++){
+					(function(){
+						var po=i;
+						setTimeout(function(){
+							setopacity(elem,po);
+						},(100-po)*20)
+					})()
+				}				
+			}
+			//淡入的效果
+			function 
+//			btn[0].onclick=function(){
+//				fadeout(pic[0]);
+//			}
+//			(function(){//刘威
+//				return function timer(){...}
+//				})(i)
+			
+			
+		</script>
+	</body>
+</html>

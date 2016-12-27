@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width:200px;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<!--<img src="pic1.jpg" alt=""id="oo" />
+		<input type="button" name="" id="one" value="显示路径" />
+		<input type="button" name="" id="two" value="改变图片" />-->
+		<!--<div id="father">
+			<div id="child">1</div>
+			<div id="child1">2</div>
+			<div id="child2">3</div>
+		</div>-->
+		<ul id="fa">
+			<li>1</li>
+			<li id="qq">2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+	</body>
+	
+	<script>
+	var w=document.getElementById("fa");
+	function first(elem){
+		elem=elem.firstChild;
+		return elem.nodeType!=1? next(elem):elem;
+	}
+	 next(first(w)).style.background="black";
+	
+	var p=document.getElementById("qq");
+	function prev(elem){
+		do{
+//			elem=elem.previousSibling;
+elem=elem.previousSibling;
+		}
+		while(elem.nodeType!=1)
+		return elem;
+	}
+	prev(p).style.background="yellowgreen";
+	function next(elem){
+		do{
+			elem=elem.nextSibling;
+		}while(elem.nodeType!=1)
+		return elem
+	}
+	next(p).style.background="deepskyblue";
+	
+	
+//	var p=document.getElementById("qq");
+//	p.previousSibling.previousSibling.style.background="red";
+//	p.nextSibling.nextSibling.style.border="1px solid pink";
+//	var p=document.getElementById("father");
+//	var q=document.getElementById("child1");
+//	alert(p.lastChild);
+//	q.parentNode.style.border="2px solid red";
+//	alert(p.firstChild);
+//p.childNodes[1].style.color="red";
+//	var p=document.getElementById("oo");
+//	var q=document.getElementById("one");
+//	var qq=document.getElementById("two");
+//	q.onclick=function(){
+//		alert(p.getAttribute("src"));
+//	}
+//	
+//	qq.onclick=function(){
+//			p.setAttribute("src","pic2.jpg");
+//	}
+
+
+	
+	</script>
+</html>
